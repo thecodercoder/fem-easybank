@@ -278,6 +278,11 @@ button:hover::before, .button:hover::before {
   }
 }
 
+.header {
+  position: relative;
+  z-index: 1;
+}
+
 .header.open .header__toggle > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
