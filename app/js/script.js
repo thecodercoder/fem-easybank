@@ -1,28 +1,32 @@
 const btnHamburger = document.querySelector('#btnHamburger');
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
-const overlay = document.querySelector('.overlay');
 const fadeElems = document.querySelectorAll('.has-fade');
+const headMenu = document.querySelector('.header__menu');
 
-btnHamburger.addEventListener('click', function(){
-  console.log('click hamburger');
-
-  if(header.classList.contains('open')){ // Close Hamburger Menu
+// Open/Close Hamburger Menu.
+const mobileMenu = () => {
+  if (header.classList.contains('open')) {
     body.classList.remove('noscroll');
-    header.classList.remove('open');    
-    fadeElems.forEach(function(element){
-      element.classList.remove('fade-in');
-      element.classList.add('fade-out');
-    });
-    
-  }
-  else { // Open Hamburger Menu
+    header.classList.remove('open');
+    headMenu.classList.toggle('has-fade');
+  } else {
     body.classList.add('noscroll');
     header.classList.add('open');
-    fadeElems.forEach(function(element){
-      element.classList.remove('fade-out');
-      element.classList.add('fade-in');
-    });
+    headMenu.classList.toggle('has-fade');
+  }
+};
 
-  }  
-});
+btnHamburger.addEventListener('click', mobileMenu);
+
+// Close header__menu when browser hit 1023px.
+const closeHamMenu = () => {
+  if (window.innerWidth >= 1023) {
+    document.querySelector('.header__menu').style.display = 'none';
+  } else {
+    document.querySelector('.header__menu').style.display = 'block';
+  }
+};
+
+window.addEventListener('load', closeHamMenu);
+window.addEventListener('resize', closeHamMenu);
