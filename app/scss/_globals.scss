@@ -3,7 +3,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -17,7 +19,7 @@ body {
   line-height: 1.3;
   overflow-x: hidden;
 
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     font-size: $font-med;
   }
 
@@ -27,7 +29,9 @@ body {
 }
 
 // Text
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 300;
   line-height: 1.15;
   color: $darkBlue;
@@ -38,7 +42,7 @@ h1 {
   font-size: 2.31rem;
   margin-bottom: 1.5rem;
 
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     font-size: $font-xlg;
   }
 }
@@ -47,10 +51,10 @@ h2 {
   font-size: 1.875rem;
   margin-bottom: 1.5625rem;
 
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     font-size: 2.25rem;
     margin-bottom: 2.25rem;
-  }  
+  }
 }
 
 p {
@@ -58,7 +62,9 @@ p {
   margin-bottom: 2.25rem;
 }
 
-a, a:visited, a:hover {
+a,
+a:visited,
+a:hover {
   text-decoration: none;
 }
 
@@ -73,7 +79,7 @@ a, a:visited, a:hover {
     padding-bottom: 4.375rem;
     padding-left: 1.5rem;
 
-    @include breakpoint-up(large){
+    @include breakpoint-up(large) {
       padding-top: 6rem;
       padding-bottom: 6rem;
     }
@@ -81,8 +87,8 @@ a, a:visited, a:hover {
   &--py {
     padding-top: 4.375rem;
     padding-bottom: 4.375rem;
-    
-    @include breakpoint-up(large){
+
+    @include breakpoint-up(large) {
       padding-top: 6rem;
       padding-bottom: 6rem;
     }
@@ -93,8 +99,8 @@ a, a:visited, a:hover {
   }
   &--pt {
     padding-top: 4.375rem;
-    
-    @include breakpoint-up(large){
+
+    @include breakpoint-up(large) {
       padding-top: 6rem;
     }
   }
@@ -103,8 +109,8 @@ a, a:visited, a:hover {
   }
   &--pb {
     padding-bottom: 4.375rem;
-    
-    @include breakpoint-up(large){
+
+    @include breakpoint-up(large) {
       padding-bottom: 6rem;
     }
   }
@@ -120,18 +126,19 @@ a, a:visited, a:hover {
   &-jc-sb {
     justify-content: space-between;
   }
-  
+
   &-jc-c {
     justify-content: center;
   }
-  
+
   &-ai-c {
     align-items: center;
   }
 }
 
 // Buttons
-button, .button {
+button,
+.button {
   position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
@@ -140,13 +147,13 @@ button, .button {
   border-radius: 50px;
   cursor: pointer;
   color: $white;
-  font-weight: 400;  
-  font-size: $font-sm;  
+  font-weight: 400;
+  font-size: $font-sm;
   transition: opacity 300ms ease-in-out;
   overflow: hidden;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -160,18 +167,17 @@ button, .button {
   &:hover::before {
     opacity: 1;
   }
-
 }
 
 // Visibility
 .hide-for-mobile {
-  @include breakpoint-down(medium){
+  @include breakpoint-down(medium) {
     display: none;
   }
 }
 
 .hide-for-desktop {
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     display: none;
   }
 }
